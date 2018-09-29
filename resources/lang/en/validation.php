@@ -144,11 +144,13 @@ return [
     */
 
     'attributes' => [
+        'crm'                   => 'CRM',
         'email'                 => 'Email address',
         'id'                    => '#id',
         'name'                  => 'Name',
         'password'              => 'Password',
-        'password_confirmation' => 'Password confirmation'
+        'password_confirmation' => 'Password confirmation',
+        'status'                => 'Status'
     ],
 
 ];

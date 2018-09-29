@@ -6,12 +6,12 @@
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card">
-                <div class="card-header">{{ trans_choice('views.users', 2) }}</div>
+                <div class="card-header">{{ trans_choice('views.patients', 2) }}</div>
 
                 <div class="card-body">
 
                     <p>
-                        <a class="btn btn-outline-primary" href="{{ route('users.create') }}">
+                        <a class="btn btn-outline-primary" href="{{ route('patients.create') }}">
                             {{ __('views.add') }}
                         </a>
                     </p>
@@ -21,25 +21,25 @@
                             <tr>
                                 <th>{{ __('validation.attributes.id') }}</th>
                                 <th>{{ __('validation.attributes.name') }}</th>
-                                <th>{{ __('validation.attributes.email') }}</th>
+                                <th>{{ __('validation.attributes.cpf') }}</th>
                                 <th>{{ trans_choice('views.actions', 2) }}</th>
                             </tr>
-                            @foreach ($users as $user)
+                            @foreach ($patients as $patient)
                                 <tr>
-                                    <td>{{ $user->id }}</td>
-                                    <td>{{ $user->name }}</td>
-                                    <td>{{ $user->email }}</td>
+                                    <td>{{ $patient->id }}</td>
+                                    <td>{{ $patient->name }}</td>
+                                    <td>{{ $patient->cpf }}</td>
                                     <td>
                                         <div class="btn-group" role="group">
                                             <a class="btn btn-secondary btn-sm" 
-                                                href="{{ route('users.show', $user->id) }}">
+                                                href="{{ route('patients.show', $patient->id) }}">
                                                 {{ __('views.show') }}
                                             </a>
                                             <a class="btn btn-warning btn-sm" 
-                                                href="{{ route('users.edit', $user->id) }}">
+                                                href="{{ route('patients.edit', $patient->id) }}">
                                                 {{ __('views.edit') }}
                                             </a>
-                                            <form action="{{ route('users.destroy', $user->id) }}" method="post">
+                                            <form action="{{ route('patients.destroy', $patient->id) }}" method="post">
                                                 @csrf
                                                 <input type="hidden" name="_method" value="delete">
                                                 <button class="btn btn-danger btn-sm" type="submit">

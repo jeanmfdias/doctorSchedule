@@ -20,6 +20,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['middleware' => 'auth'], function() {
 
     Route::resource('doctors', 'DoctorsController');
+    Route::resource('patients', 'PatientsController');
     Route::resource('users', 'UsersController');
 
 });

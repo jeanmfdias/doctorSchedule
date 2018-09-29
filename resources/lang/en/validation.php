@@ -144,6 +144,7 @@ return [
     */
 
     'attributes' => [
+        'cpf'                   => 'CPF',
         'crm'                   => 'CRM',
         'email'                 => 'Email address',
         'id'                    => '#id',

@@ -113,6 +113,8 @@ return [
     'uploaded'             => 'The :attribute failed to upload.',
     'url'                  => 'The :attribute format is invalid.',
 
+    'zero_or_min'          => 'The :attribute must be at least :min',
+
     /*
     |--------------------------------------------------------------------------
     | Custom Validation Language Lines
@@ -141,6 +143,12 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'email'                 => 'Email address',
+        'id'                    => '#id',
+        'name'                  => 'Name',
+        'password'              => 'Password',
+        'password_confirmation' => 'Password confirmation'
+    ],
 
 ];

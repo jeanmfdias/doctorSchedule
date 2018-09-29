@@ -16,7 +16,7 @@
                         </a>
                     </p>
                     
-                    <div class="table-responsible">
+                    <div class="table-responsive">
                         <table class="table table-bordered">
                             <tr>
                                 <th>{{ __('validation.attributes.id') }}</th>

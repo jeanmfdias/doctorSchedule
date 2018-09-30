@@ -3,10 +3,10 @@ import * as CDataTable from './components/dataTable';
 const FIELDS = [
   { data: 'id', name: 'id' },
   { data: 'name', columns: 'name' },
-  { data: 'email', columns: 'email' }
+  { data: 'crm', columns: 'crm' }
 ];
-const ID_TABLE = '#users-table';
-const BASE_URL = '/users/';
+const ID_TABLE = '#doctors-table';
+const BASE_URL = '/doctors/';
 
 $(() => {
   CDataTable.loadDataTable(ID_TABLE, BASE_URL + 'data', FIELDS);

@@ -19,6 +19,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => 'auth'], function() {
 
+    Route::get('doctors/data', 'DoctorsController@dataIndex')->name('doctors.data');
     Route::resource('doctors', 'DoctorsController');
     Route::resource('patients', 'PatientsController');
     Route::resource('schedules', 'SchedulesController');

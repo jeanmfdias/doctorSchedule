@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Repositories\Repository;
 use App\Doctor;
+use DataTables;
 
 class DoctorsController extends Controller
 {
@@ -20,7 +21,7 @@ class DoctorsController extends Controller
     public function index()
     {
         $returns = [
-            'doctors' => $this->doctor->all()
+            'js' => [ 'doctors' ]
         ];
         return view('doctors.index', $returns);
     }
@@ -85,6 +86,17 @@ class DoctorsController extends Controller
     {
         $this->doctor->delete($id);
         return redirect(route('doctors.index'));
+    }
+
+    public function dataIndex()
+    {
+        $doctors = $this->doctor->getModel();
+
+        $doctors = $doctors->select('id', 'name', 'crm');
+
+        $doctors = $doctors->get();
+
+        return DataTables::of($doctors)->make();
     }
     
 }

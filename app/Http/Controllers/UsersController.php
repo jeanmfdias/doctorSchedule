@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Repositories\Repository;
 use App\User;
 use App\Rules\ZeroOrMin;
+use DataTables;
 
 class UsersController extends Controller
 {
@@ -21,7 +22,7 @@ class UsersController extends Controller
     public function index()
     {
         $returns = [
-            'users' => $this->user->all()
+            'js' => [ 'users' ]
         ];
         return view('users.index', $returns);
     }
@@ -95,6 +96,17 @@ class UsersController extends Controller
     {
         $this->user->delete($id);
         return redirect(route('users.index'));
+    }
+
+    public function dataIndex()
+    {
+        $users = $this->user->getModel();
+
+        $users = $users->select('id', 'name', 'email');
+
+        $users = $users->get();
+
+        return DataTables::of($users)->make();
     }
 
 }

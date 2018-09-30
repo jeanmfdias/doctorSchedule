@@ -2,7 +2,7 @@
 
 <div class="form-group">
     <label for="name">{{ __('validation.attributes.name') }}</label>
-    <input type="name" class="form-control" id="name" 
+    <input type="text" class="form-control" id="name" 
         name="name" aria-describedby="nameHelp" required
         value="{{ $user->name ?? old('name') }}" {{ $disabled ? 'disabled' : null }}>
     <small id="nameHelp" class="form-text text-muted">{{ __('views.required') }}</small>

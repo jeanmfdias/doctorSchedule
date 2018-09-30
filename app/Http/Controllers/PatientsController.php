@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Repositories\Repository;
 use App\Patient;
-use Illuminate\Support\Facades\Auth;
 
 class PatientsController extends Controller
 {

@@ -17,12 +17,12 @@ class CreatePatientsTable extends Migration
             $table->increments('id');
             $table->string('name', 100);
             $table->string('cpf', 11)->unique();
-            $table->integer('register_by_user_id')->unsigned()->nullable();
+            $table->integer('register_by_user_id')->unsigned();
             $table->boolean('status')->default(1);
             $table->timestamps();
 
             $table->foreign('register_by_user_id')->on('users')->references('id')
-                ->onDelete('set null')->onUpdate('cascade');
+                ->onDelete('restrict')->onUpdate('cascade');
         });
     }
 

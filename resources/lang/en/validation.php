@@ -146,11 +146,17 @@ return [
     'attributes' => [
         'cpf'                   => 'CPF',
         'crm'                   => 'CRM',
+        'date_time'             => 'Date and Time',
+        'description'           => 'Description',
+        'doctor_id'             => 'Doctor',
         'email'                 => 'Email address',
+        'exams'                 => 'Exams',
         'id'                    => '#id',
         'name'                  => 'Name',
+        'patient_id'            => 'Patient',
         'password'              => 'Password',
         'password_confirmation' => 'Password confirmation',
+        'register_by_user_id'   => 'Register by user',
         'status'                => 'Status'
     ],
 

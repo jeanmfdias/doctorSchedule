@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Repositories\Repository;
 use App\Doctor;
 
@@ -49,6 +50,7 @@ class DoctorsController extends Controller
         ]);
 
         $data = $request->all();
+        $data['register_by_user_id'] = Auth::user()->id;
         $doctor = $this->doctor->create($data);
         if ($doctor) {
             return redirect(route('doctors.show', $doctor->id));

@@ -8,6 +8,7 @@ use App\Repositories\Repository;
 use App\Doctor;
 use App\Patient;
 use App\Schedule;
+use DataTables;
 
 class SchedulesController extends Controller
 {
@@ -26,7 +27,7 @@ class SchedulesController extends Controller
     public function index()
     {
         $returns = [
-            'schedules' => $this->schedule->all()
+            'js' => [ 'schedules' ]
         ];
         return view('schedules.index', $returns);
     }
@@ -108,6 +109,21 @@ class SchedulesController extends Controller
     {
         $this->schedule->delete($id);
         return redirect(route('schedules.index'));
+    }
+
+    public function dataIndex()
+    {
+        $schedules = $this->schedule->getModel();
+
+        $schedules = $schedules->select('schedules.id', 'schedules.date_time', 'patients.name as patient', 
+            'doctors.name as doctor', 'schedules.status');
+        
+        $schedules = $schedules->join('patients', 'patients.id', '=', 'schedules.patient_id');
+        $schedules = $schedules->join('doctors', 'doctors.id', '=', 'schedules.doctor_id');
+
+        $schedules = $schedules->get();
+
+        return DataTables::of($schedules)->make();
     }
 
 }

@@ -23,6 +23,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::resource('doctors', 'DoctorsController');
     Route::get('patients/data', 'PatientsController@dataIndex')->name('patients.data');
     Route::resource('patients', 'PatientsController');
+    Route::get('schedules/data', 'SchedulesController@dataIndex')->name('schedules.data');
     Route::resource('schedules', 'SchedulesController');
     Route::get('users/data', 'UsersController@dataIndex')->name('users.data');
     Route::resource('users', 'UsersController');

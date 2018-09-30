@@ -17,49 +17,18 @@
                     </p>
                     
                     <div class="table-responsive">
-                        <table class="table table-bordered">
-                            <tr>
-                                <th>{{ __('validation.attributes.id') }}</th>
-                                <th>{{ __('validation.attributes.date_time') }}</th>
-                                <th>{{ __('validation.attributes.patient_id') }}</th>
-                                <th>{{ __('validation.attributes.doctor_id') }}</th>
-                                <th>{{ __('views.has_exams') }}</th>
-                                <th>{{ __('validation.attributes.status') }}</th>
-                                <th>{{ trans_choice('views.actions', 2) }}</th>
-                            </tr>
-                            @foreach ($schedules as $schedule)
+                        <table id="schedules-table" class="table table-bordered">
+                            <thead>
                                 <tr>
-                                    <td>{{ $schedule->id }}</td>
-                                    <td>{{ date(__('format.date_time'), strtotime($schedule->date_time)) }}</td>
-                                    <td>{{ $schedule->patient->name }}</td>
-                                    <td>{{ $schedule->doctor->name }}</td>
-                                    <td>{{ count(json_decode($schedule->exams)) > 0 ? __('views.yes') : __('views.no') }}</td>
-                                    <td>
-                                        <span class='badge badge-{{ __("format.schedule_status.$schedule->status") }}'>
-                                            {{ __("views.schedule_status.$schedule->status") }}
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <div class="btn-group" role="group">
-                                            <a class="btn btn-secondary btn-sm" 
-                                                href="{{ route('schedules.show', $schedule->id) }}">
-                                                {{ __('views.show') }}
-                                            </a>
-                                            <a class="btn btn-warning btn-sm" 
-                                                href="{{ route('schedules.edit', $schedule->id) }}">
-                                                {{ __('views.edit') }}
-                                            </a>
-                                            <form action="{{ route('schedules.destroy', $schedule->id) }}" method="post">
-                                                @csrf
-                                                <input type="hidden" name="_method" value="delete">
-                                                <button class="btn btn-danger btn-sm" type="submit">
-                                                    {{ __('views.delete') }}
-                                                </button>
-                                            </form>
-                                        </div>
-                                    </td>
+                                    <th>{{ __('validation.attributes.id') }}</th>
+                                    <th>{{ __('validation.attributes.date_time') }}</th>
+                                    <th>{{ __('validation.attributes.patient_id') }}</th>
+                                    <th>{{ __('validation.attributes.doctor_id') }}</th>
+                                    {{-- <th>{{ __('views.has_exams') }}</th> --}}
+                                    <th>{{ __('validation.attributes.status') }}</th>
+                                    <th>{{ trans_choice('views.actions', 2) }}</th>
                                 </tr>
-                            @endforeach
+                            </thead>
                         </table>
                     </div>
                     

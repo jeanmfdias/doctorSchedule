@@ -10,6 +10,8 @@ interface RepositoryInterface
     public function create(array $data);
     
     public function delete($id);
+
+    public function getModel();
     
     public function preview($id);
 

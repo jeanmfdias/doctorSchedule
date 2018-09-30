@@ -12,5 +12,9 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
-   .sass('resources/sass/app.scss', 'public/css')
-   .sass('resources/sass/welcome.scss', 'public/css');
+  .js('resources/js/users.js', 'public/js')
+  .js('resources/js/doctors.js', 'public/js')
+  .js('resources/js/patients.js', 'public/js')
+  .js('resources/js/schedules.js', 'public/js')
+  .sass('resources/sass/app.scss', 'public/css')
+  .sass('resources/sass/welcome.scss', 'public/css');

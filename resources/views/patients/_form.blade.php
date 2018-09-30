@@ -2,7 +2,7 @@
 
 <div class="form-group">
     <label for="name">{{ __('validation.attributes.name') }}</label>
-    <input type="name" class="form-control" id="name" 
+    <input type="text" class="form-control" id="name" 
         name="name" aria-describedby="nameHelp" required
         value="{{ $patient->name ?? old('name') }}" {{ $disabled ? 'disabled' : null }}>
     <small id="nameHelp" class="form-text text-muted">{{ __('views.required') }}</small>
@@ -10,7 +10,7 @@
 
 <div class="form-group">
     <label for="cpf">{{ __('validation.attributes.cpf') }}</label>
-    <input type="cpf" class="form-control" id="cpf" 
+    <input type="text" class="form-control" id="cpf" 
         name="cpf" aria-describedby="cpfHelp" required
         value="{{ $patient->cpf ?? old('cpf') }}" {{ $disabled ? 'disabled' : null }}>
     <small id="cpfHelp" class="form-text text-muted">{{ __('views.required') }}</small>

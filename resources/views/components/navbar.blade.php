@@ -21,7 +21,7 @@
                         <a class="nav-link" href="{{ route('patients.index') }}">{{ trans_choice('views.patients', 2) }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">{{ trans_choice('views.schedules', 2) }}</a>
+                        <a class="nav-link" href="{{ route('schedules.index') }}">{{ trans_choice('views.schedules', 2) }}</a>
                     </li>
                 @endauth
             </ul>

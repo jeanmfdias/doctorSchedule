@@ -2,7 +2,7 @@
 
 <div class="form-group">
     <label for="name">{{ __('validation.attributes.name') }}</label>
-    <input type="name" class="form-control" id="name" 
+    <input type="text" class="form-control" id="name" 
         name="name" aria-describedby="nameHelp" required
         value="{{ $doctor->name ?? old('name') }}" {{ $disabled ? 'disabled' : null }}>
     <small id="nameHelp" class="form-text text-muted">{{ __('views.required') }}</small>
@@ -10,7 +10,7 @@
 
 <div class="form-group">
     <label for="crm">{{ __('validation.attributes.crm') }}</label>
-    <input type="crm" class="form-control" id="crm" 
+    <input type="text" class="form-control" id="crm" 
         name="crm" aria-describedby="crmHelp" required
         value="{{ $doctor->crm ?? old('crm') }}" {{ $disabled ? 'disabled' : null }}>
     <small id="crmHelp" class="form-text text-muted">{{ __('views.required') }}</small>

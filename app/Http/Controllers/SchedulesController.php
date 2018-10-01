@@ -51,6 +51,7 @@ class SchedulesController extends Controller
             'patients' => $this->patient->all(),
             'doctors' => $this->doctor->all(),
             'status' => Schedule::getStatus(),
+            'js' => [ 'schedules' ],
         ];
         return view('schedules.create', $returns);
     }

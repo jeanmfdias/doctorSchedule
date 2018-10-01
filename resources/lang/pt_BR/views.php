@@ -19,6 +19,7 @@ return [
     'no'            => 'Não',
     'patients'      => 'Paciente|Pacientes',
     'register'      => 'Cadastrar',
+    'remember_me'   => 'Lembrar-me',
     'required'      => 'Obrigatório',
     'reset'         => 'Limpar',
     'schedules'     => 'Agendamento|Agendamentos',

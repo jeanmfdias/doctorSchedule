@@ -2,8 +2,8 @@
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
     "/css/welcome.css": "/css/welcome.css",
-    "/js/users.js": "/js/users.js",
     "/js/schedules.js": "/js/schedules.js",
+    "/js/users.js": "/js/users.js",
     "/js/patients.js": "/js/patients.js",
     "/js/doctors.js": "/js/doctors.js"
 }

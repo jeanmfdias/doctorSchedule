@@ -37,8 +37,8 @@ class SchedulesController extends Controller
         $returns = [
             'schedule' => $this->schedule->preview($id),
             'disabled' => true,
-            'patients' => $this->patient->all(),
-            'doctors' => $this->doctor->all(),
+            'patients' => $this->patient->getModel()->where('status', 1)->get(),
+            'doctors' => $this->doctor->getModel()->where('status', 1)->get(),
             'status' => Schedule::getStatus(),
         ];
         return view('schedules.show', $returns);
@@ -48,8 +48,8 @@ class SchedulesController extends Controller
     {
         $returns = [
             'disabled' => false,
-            'patients' => $this->patient->all(),
-            'doctors' => $this->doctor->all(),
+            'patients' => $this->patient->getModel()->where('status', 1)->get(),
+            'doctors' => $this->doctor->getModel()->where('status', 1)->get(),
             'status' => Schedule::getStatus(),
             'js' => [ 'schedules' ],
         ];
@@ -80,8 +80,8 @@ class SchedulesController extends Controller
         $returns = [
             'schedule' => $this->schedule->preview($id),
             'disabled' => false,
-            'patients' => $this->patient->all(),
-            'doctors' => $this->doctor->all(),
+            'patients' => $this->patient->getModel()->where('status', 1)->get(),
+            'doctors' => $this->doctor->getModel()->where('status', 1)->get(),
             'status' => Schedule::getStatus(),
         ];
         return view('schedules.edit', $returns);

@@ -1,12 +1,12 @@
 # DoctorSchedule
 
-## Requirements
+## Requisitos
 
 - PHP >= 7.1
 - MySQL >= 5.6
 - Node.js >= 8
 
-## Steps to execute
+## Passos para executar
 
 ```sh
 $ composer install
@@ -14,7 +14,7 @@ $ cp .env.example .env
 $ php artisan key:generate
 ```
 
-Create database doctor_schedule_db
+Criar o banco de dados com o nome de `doctor_schedule_db`
 
 ```sh
 $ php artisan migrate
@@ -23,4 +23,7 @@ $ npm run dev
 $ php artisan serve
 ```
 
-Project running at http://127.0.0.1:8000
+## Ideias
+
+ - [ ] Criar um Dashboard dinâmica, com relatórios da Agenda (próximas consultas, consultas canceladas, etc)
+ - [ ] Criar tipos de usuários (Secretária, Médico, etc)

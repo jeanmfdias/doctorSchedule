@@ -155,7 +155,7 @@ return [
         'name'                  => 'Nome',
         'patient_id'            => 'Paciente',
         'password'              => 'Senha',
-        'password_confirmation' => 'Confirmação de senha confirmation',
+        'password_confirmation' => 'Confirmação de senha',
         'register_by_user_id'   => 'Criado pelo usuário',
         'status'                => 'Status'
     ],

@@ -1,4 +1,8 @@
 import * as CDataTable from './components/dataTable';
+import $ from 'jquery';
+import 'select2';
+import 'select2/dist/css/select2.css';
+import 'fontawesome';
 
 const FIELDS = [
   { data: 'id', name: 'id' },
@@ -15,7 +19,10 @@ const ID_TABLE = '#schedules-table';
 const BASE_URL = '/schedules/';
 
 $(() => {
-  CDataTable.loadDataTable(ID_TABLE, BASE_URL + 'data', FIELDS);
+  if ($(ID_TABLE)) {
+    CDataTable.loadDataTable(ID_TABLE, BASE_URL + 'data', FIELDS);
+  }
+  $('.select2').select2();
 });
 
 $(document).on('click', '.btn-delete', (event) => {

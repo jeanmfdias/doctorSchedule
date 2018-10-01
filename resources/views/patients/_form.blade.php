@@ -13,7 +13,8 @@
     <input type="text" class="form-control" id="cpf" 
         name="cpf" aria-describedby="cpfHelp" required
         value="{{ $patient->cpf ?? old('cpf') }}" {{ $disabled ? 'disabled' : null }}>
-    <small id="cpfHelp" class="form-text text-muted">{{ __('views.required') }}</small>
+    <small id="cpfHelp" class="form-text text-muted">{{ __('views.required') }} - 
+        {{ __('messages.only_number') }}</small>
 </div>
 
 <div class="form-group">

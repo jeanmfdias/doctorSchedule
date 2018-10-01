@@ -1,3 +1,7 @@
+import $ from 'jquery';
+import 'datatables.net-bs4';
+import 'datatables.net-bs4/css/dataTables.bootstrap4.css';
+
 const BUTTONS = 
 `<div class="btn-group">
   <button class="btn-preview btn btn-info btn-sm"><i class="fa fa-eye"></i></button>

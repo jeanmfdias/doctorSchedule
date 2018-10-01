@@ -3,7 +3,7 @@
 <div class="form-group">
     <div class="form-group">
         <label for="patient_id">{{ __('validation.attributes.patient_id') }}</label>
-        <select class="form-control" id="patient_id" name="patient_id"
+        <select class="select2 form-control" id="patient_id" name="patient_id"
             {{ $disabled ? 'disabled' : null }}>
             <option value="0" selected disabled>{{ __('messages.select_a_patient') }}</option>
             @foreach ($patients as $patient)
@@ -19,7 +19,7 @@
 <div class="form-group">
     <div class="form-group">
         <label for="doctor_id">{{ __('validation.attributes.doctor_id') }}</label>
-        <select class="form-control" id="doctor_id" name="doctor_id"
+        <select class="select2 form-control" id="doctor_id" name="doctor_id"
             {{ $disabled ? 'disabled' : null }}>
             <option value="0" selected disabled>{{ __('messages.select_a_doctor') }}</option>
             @foreach ($doctors as $doctor)

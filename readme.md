@@ -27,3 +27,5 @@ $ php artisan serve
 
  - [ ] Criar um Dashboard dinâmica, com relatórios da Agenda (próximas consultas, consultas canceladas, etc)
  - [ ] Criar tipos de usuários (Secretária, Médico, etc)
+ - [ ] Criar métodos REST para as demais funções da aplicação
+ - [ ] Adicionar autenticação para a API

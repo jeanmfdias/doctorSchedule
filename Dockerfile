@@ -12,4 +12,7 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" &&
     php -r "unlink('composer-setup.php');" && \
     mv composer.phar /usr/local/bin/composer
 
+RUN curl -sL https://deb.nodesource.com/setup_11.x | bash - && \
+    apt install -y nodejs
+
 RUN cp /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime

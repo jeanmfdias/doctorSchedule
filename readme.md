@@ -2,9 +2,9 @@
 
 ## Requisitos
 
-- PHP >= 7.1
+- PHP >= 7.2
 - MySQL >= 5.6
-- Node.js >= 8
+- Node.js >= 11
 
 ## Passos para executar
 

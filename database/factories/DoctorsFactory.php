@@ -4,7 +4,7 @@ use Faker\Generator as Faker;
 use App\User;
 
 $factory->define(App\Doctor::class, function (Faker $faker) {
-    $user = User::inRandomOrder()->first();
+    $user = factory(User::class)->create();
     return [
         'name' => (string) $faker->name,
         'crm' => (string) $faker->unique()->numberBetween(100000, 999999),

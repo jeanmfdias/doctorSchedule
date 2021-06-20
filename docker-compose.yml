@@ -1,9 +1,10 @@
-version: '3.7'
+version: '3.9'
 
 services:
   web:
     container_name: web-doctor-schedule
-    image: nginx:latest
+    build: ./docker/nginx
+    image: nginx-docker-schedule
     ports:
       - 80:80
     volumes:
@@ -15,9 +16,7 @@ services:
   app:
     container_name: app-doctor-schedule
     image: phpfpm-doctor-schedule
-    build:
-      context: .
-      dockerfile: Dockerfile
+    build: ./docker/php
     volumes:
       - ./:/var/www
     ports:

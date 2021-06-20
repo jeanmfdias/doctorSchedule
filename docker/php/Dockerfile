@@ -1,4 +1,4 @@
-FROM php:7.4-fpm
+FROM php:8.0-fpm
 
 RUN apt update && apt upgrade -y
 
@@ -12,8 +12,11 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" &&
     php -r "unlink('composer-setup.php');" && \
     mv composer.phar /usr/local/bin/composer
 
-RUN curl -sL https://deb.nodesource.com/setup_14.x | bash - && \
+RUN curl -sL https://deb.nodesource.com/setup_16.x | bash - && \
     apt install -y nodejs
+
+RUN npm install --global npm && \
+    npm install --global yarn
 
 RUN cp /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
 
